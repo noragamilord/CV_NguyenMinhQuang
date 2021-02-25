@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap");
+
+@font-face{
+    font-family: Exo-bold;
+    src: url(../fonts/Exo-Bold.otf) format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+@font-face{
+    font-family: Quicksand-Bold;
+    src: url(../fonts/Quicksand-Bold.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+@font-face{
+    font-family: Quicksand-Regular;
+    src: url(../fonts/Quicksand-Regular.ttf) format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
+:root{
+    --primary-color: #212529;
+    --second-color: #ff55a5;
+    --third-color: #ff5860;
+    --primary-font: "Quicksand-Regular";
+    --second-font: "Quicksand-Bold";
+    --third-font: "Exo-bold";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+body{
+    font-family: var(--primary-font);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+p{
+    margin: 0;
+    
+}
+/* START HEADER */
+.header-area{
+    position: fixed;
+    top: 35%;
+    right: 0;
+    z-index: 10;
+}
+.nav-item{
+    margin-bottom: 5px;
+    position: relative;
+}
+.nav-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -30px;
+    width: 190px;
+    background: linear-gradient(90deg,var(--second-color) 0,var(--third-color) 100%);
+    z-index: -1;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transition: .2s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100px);
+}
+.nav-item .nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: .4s ease;
+    color: #fff;
+    padding: 0;
+}
+.nav-item .nav-link i{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    background: var(--second-color);
+}
+.nav-item .text {
+    position: absolute;
+    top: 14px;
+    left: -95px;
+    color: #fff !important;
+    transition: .2s ease;
+    transform: scale(0);
+    text-decoration: none;
+}
+.nav-item:hover .text{
+    transform: scale(1);
+    line-height: 10px;
+}
+.nav-item:hover i{
+    border: 1px solid #fff;
+    background: #4973ff;
+}
+.nav-item:hover:before {
+    transform: translate(0);
+    opacity: 1;
+    visibility: visible;
+}
+/* END HEADER */
+.about,
+.skill,
+.project,
+.contact{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 0;
+    overflow: hidden;
+}
+.about.active{
+    display: flex;
+    align-items: center;
+}
+/* START ABOUT */
+.about .wave{
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #4973ff;
+}
+.about .wave span{
+    position: absolute;
+    width: 325vh;
+    height: 325vh;
+    top: 0;
+    left: 50%;
+    background: #000;
+    transform: translate(-50%, -75%);
+}
+.about .wave span:nth-child(1){
+    animation: animate 5s linear infinite;
+    border-radius: 45%;
+    background: rgba(20,20,20,1);
+}
+.about .wave span:nth-child(2){
+    animation: animate 10s linear infinite;
+    border-radius: 40%;
+    background: rgba(20,20,20,0.5);
+}
+.about .wave span:nth-child(3){
+    animation: animate 15s linear infinite;
+    border-radius: 42.5%;
+    background: rgba(20,20,20,0.5);
+}
+@keyframes animate{
+    0%{
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+.about .q-aboutme{
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+.about .aboutme-img img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.about .q-aboutme .aboutme-name{
+    font: bold 30px var(--second-font);
+    margin: 0;
+    padding: 25px 0;
+    letter-spacing: 1px;
+}
+.about .q-aboutme .job{
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.about .q-aboutme .aboutme-desc{
+    font-size: 15px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+/* END ABOUT */
+/* START SKILL */
+.skill{
+    background-image: url("../images/bg-skill.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 25px 0;
+}
+.q-skill-body{
+    padding: 10px;
+    background: #222;
+}
+.q-skill-body img{
+    width: 100px;
+    height: 100px;
+}
+.q-skill-body h5{
+    margin: 0;
+    padding: 10px 0;
+    color: #fff;
+}
+.ldBar-label{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: #fff;
+}
+/* END SKILL */
